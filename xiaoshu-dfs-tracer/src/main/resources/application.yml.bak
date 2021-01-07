@@ -2,7 +2,7 @@
 server:
   port: 8000
   servlet:
-    context-path: /v1/dfs-tracer
+    context-path: /dfs-tracer
 
 spring:
   application:
@@ -10,7 +10,7 @@ spring:
   cloud:
     nacos:
       discovery:
+        enabled: true
         server-addr: xiaoshu.aliyun.com:8848
-
   main:
     allow-bean-definition-overriding: true

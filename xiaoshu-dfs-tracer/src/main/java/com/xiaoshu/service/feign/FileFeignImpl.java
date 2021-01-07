@@ -22,7 +22,7 @@ public interface FileFeignImpl {
      * @return
      */
     @ApiOperation("storage-文件上传接口")
-    @RequestMapping(value = "/feign/file", method = RequestMethod.GET)
+    @RequestMapping(value = "/dfs-storage/feign/file", method = RequestMethod.GET)
     String fileUpload();
 
 }

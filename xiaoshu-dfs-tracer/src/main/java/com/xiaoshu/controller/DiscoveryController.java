@@ -15,7 +15,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 import java.util.List;
 /**
- * 功能说明：
+ * 功能说明：提供注册服务查询功能；
  *
  * @ com.xiaoshu.controller
  * <p>

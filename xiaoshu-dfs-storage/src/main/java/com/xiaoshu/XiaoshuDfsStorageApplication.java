@@ -21,6 +21,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class XiaoshuDfsStorageApplication {
 
     public static void main(String[] args) {
+        log.info("[server up] start the server on time :{}", System.currentTimeMillis());
         SpringApplication.run(XiaoshuDfsStorageApplication.class, args);
     }
 

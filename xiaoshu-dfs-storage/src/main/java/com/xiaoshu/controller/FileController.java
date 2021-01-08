@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 功能说明：
+ * 功能说明： 提供文件上传接口服务；
  *
  * @ com.xiaoshu.controller
  * <p>

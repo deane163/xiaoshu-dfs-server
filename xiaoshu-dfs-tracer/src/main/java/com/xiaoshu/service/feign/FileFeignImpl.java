@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
  * <p>
  * Original @Author: deane.jia-贾亮亮,@2021/1/7@19:46
  * <p>
- * Copyright (C)2012-@2021 深圳优必选科技 All rights reserved.
+ * Copyright (C)2012-@2021 小树盛凯科技 All rights reserved.
  */
 @FeignClient(value = "xiaoshu-dfs-storage", configuration = FeignConfig.class)
 public interface FileFeignImpl {

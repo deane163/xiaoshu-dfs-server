@@ -1,5 +1,7 @@
 package com.xiaoshu.controller;
 
+import com.xiaoshu.model.ResultCode;
+import com.xiaoshu.model.ResultVo;
 import com.xiaoshu.service.feign.FileFeignImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 功能说明： 文件上传服务；
+ * 功能说明： 文件上传服务；&& TODO 并提供文件解压功能 && 文件二次处理功能实现；
  *
  * @ com.xiaoshu.controller
  * <p>
@@ -28,12 +30,12 @@ public class FileUploadController {
     @Autowired(required = false)
     private FileFeignImpl fileFeign;
 
-    @ApiOperation("文件处理接口")
+    @ApiOperation("文件查询服务")
     @RequestMapping(value = "/file", method = RequestMethod.GET)
-    public String queryFile(){
-        log.info("文件处理接口");
-        fileFeign.fileUpload();
-        return "success";
+    public ResultVo<String> queryFile(@ApiParam(value = "文件名称") @RequestParam(value = "name") String name){
+        log.info("[Tracer Server] find file by name : {}", name);
+        // TODO 查询文件信息
+        return new ResultVo<>(ResultCode.SUCCESS, name);
     }
 
     /**
@@ -42,8 +44,9 @@ public class FileUploadController {
      */
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ApiOperation(value = "上传文件")
-    public String uploadFile(@ApiParam(value = "file") @RequestParam(value = "file") MultipartFile file) {
+    public ResultVo<String> uploadFile(@ApiParam(value = "file") @RequestParam(value = "file") MultipartFile file) {
         log.info("Consumer upload the file , file name is :{}", file.getName());
-        return fileFeign.uploadFileService(file);
+        // TODO  return the result of  file upload;
+        return new ResultVo<>(ResultCode.SUCCESS, fileFeign.uploadFileService(file));
     }
 }

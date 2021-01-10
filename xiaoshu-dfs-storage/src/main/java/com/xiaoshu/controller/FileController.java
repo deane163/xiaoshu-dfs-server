@@ -1,5 +1,7 @@
 package com.xiaoshu.controller;
 
+import com.xiaoshu.model.ResultCode;
+import com.xiaoshu.model.ResultVo;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
@@ -25,12 +27,17 @@ import java.io.IOException;
 @Slf4j
 public class FileController {
 
+    /**
+     * 进行文件查询操作
+     * @param name
+     * @return
+     */
     @ApiOperation("storage-文件处理接口")
     @RequestMapping(value = "/file", method = RequestMethod.GET)
-    public String fileUpload(){
-        log.info("[storage] 文件处理接口");
-        return "success";
-    }
+    public String fileUpload(String name){
+        log.info("[storage] 文件处理接口 name:{}", name);
+        return  name;
+}
 
     /**
      * 上传文件服务，负责文件上传操作
